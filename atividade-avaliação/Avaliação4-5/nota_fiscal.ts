@@ -57,12 +57,14 @@ export class NotaFiscal {
     }
 
     // Percorrer o array items e calcular o valor total da NotaFiscal
-    calcularValorNotaFiscal() : number {
-        let valorCalculado = 0;
+    calcularValorNotaFiscal() : void {
+        let soma = 0
+        for(let count = 0; count < this.items.length; count++){
+            let quantia =  this.items[count].getquantidade() * this.items[count].getvalor()
+            soma += quantia
+        }
 
-
-        return valorCalculado;
-
+        console.log("O valor total de suas compras é de: R$ " + soma)
     }
 
     // Imprimir a NotaFiscal conforme o Layout definido
@@ -86,16 +88,6 @@ export class NotaFiscal {
         }
         console.log("--------------------------------------------------------------------------------------------------------------------")
         console.log("Valor Total:", this.valorNota)
-    }
-    
-    MostrarNotaFiscal(): void {
-        let soma = 0
-        for(let count = 0; count < this.items.length; count++){
-            let quantia =  this.items[count].getquantidade() * this.items[count].getvalor()
-            soma += quantia
-        }
-
-        console.log("O valor total de suas compras é de: R$ " + soma)
     }
 
     

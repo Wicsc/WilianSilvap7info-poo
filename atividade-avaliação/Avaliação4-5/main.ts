@@ -48,4 +48,4 @@ console.log("=========================");
 console.log(nf);
 console.log("=========================");
 
-nf.MostrarNotaFiscal();
+nf.calcularValorNotaFiscal();
